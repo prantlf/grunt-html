@@ -1,4 +1,4 @@
-# grunt-html-master
+# grunt-html-dev-master
 
 [![Linux Build Status](https://img.shields.io/travis/jzaefferer/grunt-html/master.svg?label=Linux%20build)](https://travis-ci.org/jzaefferer/grunt-html)
 [![Windows Build status](https://img.shields.io/appveyor/ci/jzaefferer/grunt-html/master.svg?label=Windows%20build)](https://ci.appveyor.com/project/jzaefferer/grunt-html/branch/master)
@@ -8,20 +8,20 @@
 
 [Grunt][grunt] plugin for HTML validation, using the [vnu.jar markup checker][vnujar].
 
-This fork publishes a new `grunt-html-master` NPM module, which depends on `vnu-jar-master` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* - `vnu-jar@dev` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-html-master` or `grunt-html-dev` instead of `grunt-html` in your project.
+This fork publishes a new `grunt-html-dev-master` NPM module, which depends on `vnu-jar-master` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* - `vnu-jar@dev` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-html-master` or `grunt-html-dev` instead of `grunt-html` in your project.
 
 ## Getting Started
 
 Install this grunt plugin next to your project's [Gruntfile.js][getting_started] with:
 
 ```bash
-npm install grunt-html-master --save-dev
+npm install grunt-html-dev-master --save-dev
 ```
 
 Then add this line to your project's `Gruntfile.js`:
 
 ```js
-grunt.loadNpmTasks('grunt-html-master');
+grunt.loadNpmTasks('grunt-html-dev-master');
 ```
 
 Then specify what files to validate in your config:
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-vnuserver');
-  grunt.loadNpmTasks('grunt-html-master');
+  grunt.loadNpmTasks('grunt-html-dev-master');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['vnuserver', 'watch']);

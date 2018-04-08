@@ -1,5 +1,5 @@
 {
-  "name": "grunt-html-master",
+  "name": "grunt-html-dev-master",
   "description": "Grunt plugin for html validation, using vnu.jar from the master branch for the actual validation",
   "version": "18.2.9",
   "homepage": "https://github.com/prantlf/grunt-html",
