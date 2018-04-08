@@ -5,6 +5,7 @@ var htmllint = require( '../lib/htmllint' );
 var expectedResults = require( './support/expected_results' );
 
 function run( test, config, expected, message ) {
+  console.log('***', config.files, message)
   test.expect( 1 );
   // tests here
   htmllint( config, function( error, result ) {
