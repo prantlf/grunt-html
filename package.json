@@ -13,14 +13,14 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
     "async": "2.6.0",
-    "chalk": "2.3.2",
+    "chalk": "2.4.1",
     "vnu-jar": "dev"
   },
   "devDependencies": {
