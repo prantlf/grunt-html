@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "async": "2.6.0",
-    "chalk": "2.3.2",
+    "chalk": "2.4.1",
     "vnu-jar-master": "18.4.8"
   },
   "devDependencies": {
