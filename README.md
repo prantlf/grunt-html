@@ -228,7 +228,7 @@ Set `noLangDetect` to `true` to [skip the checking of the language of the page](
 
 ## Travis CI potential pitfalls
 
-Since vnu.jar requires Java 9 environment, you might have trouble setting Travis CI to work with grunt-html.
+Since vnu.jar requires Java 8 environment, you might have trouble setting Travis CI to work with grunt-html.
 In that case see [this patch](https://github.com/jquery/jquery-ui/commit/ff3769272bb5530b224297fa5d2add1865acbb7f)
 and the [Travis CI doc page](https://docs.travis-ci.com/user/trusty-ci-environment/).
 
