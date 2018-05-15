@@ -28,6 +28,11 @@ module.exports = function( grunt ) {
       reporterOutput = options.reporterOutput,
       reporter;
 
+    // Allow setting the port during grunt execution
+    if ( typeof options.server === 'function' ) {
+      options.server = options.server();
+    }
+
     htmllint( options, function( error, result ) {
       var passed = true,
         output,

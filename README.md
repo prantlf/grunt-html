@@ -67,7 +67,7 @@ all: {
 
 ### `server`
 
-* Type: `Object`, or a falsy value
+* Type: `Object`, `Function`, or a falsy value
 * Default: `false`
 
 When `server` is set to a falsy value, the validator is invoked using `java -jar`, which can be considered normal operation.
@@ -127,6 +127,56 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-vnuserver');
   grunt.loadNpmTasks('grunt-html');
   grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('default', ['vnuserver', 'watch']);
+};
+```
+
+If the port of the validator in server mode becomes know first during the grunt execution, you will not be able to write a specific port to the `server` option of the `htmllint` task. Set `server` to a function, which would return the object. The function will be evaluated by the `htmllint` task first during its execution, which will geve some other code enough time to obtain the actual port of the validator in server mode. For example:
+
+```js
+module.exports = function (grunt) {
+  var vnuPort;
+
+  grunt.initConfig({
+    vnuserver: {
+      // Name the task to be able to listen to its events.
+      server: {
+        // Start with the first free ephemeral port.
+        port: 49152,
+        // Try other ports, up to port + 30, if the first one is not free.
+        useAvailablePort: true
+      }
+    },
+    htmllint: {
+      options: {
+        // Connect to the vnu server on the dynamically chosen  port.
+        server: function () {
+          return {
+            port: vnuPort
+          };
+        }
+      },
+      all: {
+        src: "app.html"
+      }
+    },
+    watch: {
+      all: {
+        tasks: ['htmllint'],
+        files: "app.html"
+      }
+    },
+  });
+
+  grunt.loadNpmTasks('grunt-vnuserver');
+  grunt.loadNpmTasks('grunt-html');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  // Obtain the port, which the vnu server is listening to.
+  grunt.event.on('vnuserver.server.listening', function (port) {
+    vnuPort = port;
+  });
 
   grunt.registerTask('default', ['vnuserver', 'watch']);
 };
