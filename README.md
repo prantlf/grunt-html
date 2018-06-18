@@ -8,7 +8,7 @@
 
 [Grunt][grunt] plugin for HTML validation, using the [vnu.jar markup checker][vnujar].
 
-This fork publishes a new `grunt-html-dev` NPM module, which depends on `vnu-jar@dev` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* of `vnu-jar` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-html-dev` instead of `grunt-html` in your project.
+This fork publishes a new `grunt-html-dev` NPM module, which depends on `vnu-jar@next` instead of the latest release of `vnu-jar`. The [W3C Markup Validation Service](https://validator.w3.org/) uses the *development version* of `vnu-jar` too. If you want to get consistent results from on-line and off-line testing, you should use `grunt-html-dev` instead of `grunt-html` in your project.
 
 ## Getting Started
 
