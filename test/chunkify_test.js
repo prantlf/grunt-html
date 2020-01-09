@@ -4,11 +4,15 @@ var chunkify = require( '../lib/chunkify' );
 
 exports.chunkify = {
   'default': function( test ) {
-    var files = [ './some/long/path/to/file.html', './some/long/path/to/file.html', './some/long/path/to/file.html' ],
-      chunked = [ '"./some/long/path/to/file.html" "./some/long/path/to/file.html" ', '"./some/long/path/to/file.html" ' ],
-      all = [ '"./some/long/path/to/file.html" "./some/long/path/to/file.html" "./some/long/path/to/file.html" ' ];
-    test.deepEqual( chunkify( files, 64 ), chunked, 'Should split the file list of file in 2 chunks' );
-    test.deepEqual( chunkify( files, 128 ), all, 'Should do a single chunk' );
+    var file1 = 'test/invalid-encoding.html';
+    var file2 = 'test/invalid.html';
+    var file3 = 'test/valid.html';
+    var files = [ file1, file2, file3 ];
+    var chunked = [ '"' + file1 + '" "' + file2 + '" ', '"' + file3 + '" ' ];
+    var all = [ '"' + file1 + '" "' + file2 + '" "' + file3 + '" ' ];
+    test.deepEqual( chunkify( files, 60, 2000 ), chunked, 'Should split the file list with two long names' );
+    test.deepEqual( chunkify( files, 80, 800 ), chunked, 'Should split the file list with two big files' );
+    test.deepEqual( chunkify( files, 80, 2000 ), all, 'Should return one list of short names and small files' );
     test.done();
   }
 };
