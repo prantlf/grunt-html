@@ -1,3 +1,10 @@
+# [10.0.0](https://github.com/prantlf/grunt-html/compare/v10.0.0...v10.1.0) (2020-02-17)
+
+### Features
+
+* Let the command-line character and file size thresholds configure from grunt ([7e0ba0f](https://github.com/prantlf/grunt-html/commit/7e0ba0f5170f15187d3c0cbba1fe7b7bae4cefac))
+* Upgrade package dependencies ([2bd6fe6](https://github.com/prantlf/grunt-html/commit/2bd6fe65fd2e78d0a2969a2e178ca0bd0054a208))
+
 # [10.0.0](https://github.com/prantlf/grunt-html/compare/v9.1.3...v10.0.0) (2020-01-09)
 
 ### Bug Fixes
