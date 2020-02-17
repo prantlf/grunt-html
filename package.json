@@ -19,14 +19,14 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "async": "3.1.0",
+    "async": "3.1.1",
     "chalk": "3.0.0",
     "vnu-jar": "next"
   },
   "devDependencies": {
     "eslint-config-jquery": "^2.0.0",
     "grunt": "1.0.4",
-    "grunt-contrib-nodeunit": "2.0.0",
+    "grunt-contrib-nodeunit": "2.1.0",
     "grunt-eslint": "22.0.0",
     "stripcolorcodes": "0.1.0"
   },
